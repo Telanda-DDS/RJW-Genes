@@ -6,10 +6,13 @@ namespace RJW_Genes
 {
 	public class LifeForceMentalState : MentalState
 	{
-		public override void MentalStateTick()
+        //1.6 Change, delta is now passed to MentalStateTick
+        public override void MentalStateTick(int delta)
 		{
-			if (this.pawn.IsHashIntervalTick(150) && !GeneUtility.HasCriticalLifeForce(this.pawn))
-			{
+            //1.6 Update change
+            //if (this.pawn.IsHashIntervalTick(150) && !GeneUtility.HasCriticalLifeForce(this.pawn))
+            if (this.pawn.IsHashIntervalTick(150, delta) && !GeneUtility.HasCriticalLifeForce(this.pawn))
+            {
 				Pawn_JobTracker jobs = this.pawn.jobs;
 				if (!(((jobs != null) ? jobs.curDriver : null) is JobDriver_Sex))
 				{
@@ -17,7 +20,8 @@ namespace RJW_Genes
 					return;
 				}
 			}
-			base.MentalStateTick();
+			//1.6 Change, delta is now passed to MentalStateTick
+			base.MentalStateTick(delta);
 		}
 	}
 }

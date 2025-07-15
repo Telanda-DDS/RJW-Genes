@@ -4,8 +4,7 @@
     <GeneDef Name="SpecialBase" Abstract="True">
         <displayCategory>rjw_genes_special</displayCategory>
         <modExtensions>
-            <li MayRequire="OskarPotocki.VanillaFactionsExpanded.Core"
-                Class="VanillaGenesExpanded.GeneExtension">
+            <li MayRequire="OskarPotocki.VanillaFactionsExpanded.Core" Class="VEF.Genes.GeneExtension">
                 <backgroundPathEndogenes>Genes/Icons/RJW_Genes_Endogene_Background</backgroundPathEndogenes>
                 <backgroundPathXenogenes>Genes/Icons/RJW_Genes_Xenogene_Background</backgroundPathXenogenes>
             </li>

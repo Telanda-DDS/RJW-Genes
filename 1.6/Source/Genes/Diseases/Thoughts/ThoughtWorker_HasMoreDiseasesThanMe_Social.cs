@@ -16,7 +16,9 @@ namespace RJW_Genes
             if (pawn == null || other == null || pawn == other)
                 return (ThoughtState)false;
             // Check for position-existance
-            if (pawn.Position == null || other.Position == null || pawn.Map == null || other.Map == null)
+            //1.6 Fix
+            //if (pawn.Position == null || other.Position == null || pawn.Map == null || other.Map == null)
+            if (pawn.Map == null || other.Map == null || !pawn.Spawned || !other.Spawned)
                 return (ThoughtState)false;
             // Do nothing if pawn is carried 
             if (pawn.CarriedBy != null)

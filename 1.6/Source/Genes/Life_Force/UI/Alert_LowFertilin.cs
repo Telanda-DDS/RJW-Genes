@@ -36,9 +36,11 @@ namespace RJW_Genes
 			{
 				return;
 			}
-			foreach (Pawn pawn in PawnsFinder.AllMapsCaravansAndTravelingTransportPods_Alive)
-			{
-				if (pawn.RaceProps.Humanlike && pawn.Faction == Faction.OfPlayer)
+            //1.6 Patch
+            //foreach (Pawn pawn in PawnsFinder.AllMapsCaravansAndTravelingTransportPods_Alive)
+            foreach (Pawn pawn in PawnsFinder.AllMapsCaravansAndTravellingTransporters_Alive_OfPlayerFaction)
+            {
+				if (pawn.RaceProps.Humanlike)
 				{
 					Pawn_GeneTracker genes = pawn.genes;
 					Gene_LifeForce gene_Lifeforce = (genes != null) ? genes.GetFirstGeneOfType<Gene_LifeForce>() : null;

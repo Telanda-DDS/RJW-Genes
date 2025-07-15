@@ -143,12 +143,17 @@ namespace RJW_Genes
         {
 			float total_fluid = FluidUtility.GetTotalFluidAmount(props.pawn) / 100;
 
+
+            //TODO
+            //1.6 QUIRK subsystem disabled.
+            /*
 			//More in the tank means more to give
 			if (props.pawn.Has(Quirk.Messy))
 			{
 				total_fluid *= 2;
 			}
-			if (props.pawn.RaceProps.Animal)
+			*/
+            if (props.pawn.RaceProps.Animal)
             {
 				total_fluid *= 0.1f; //Should make this settable in settings
             }

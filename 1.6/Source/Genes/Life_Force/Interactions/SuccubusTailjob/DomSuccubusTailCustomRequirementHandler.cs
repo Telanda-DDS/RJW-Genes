@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using Verse;
 using RimWorld;
 using rjw.Modules.Interactions;
-using rjw.Modules.Interactions.Internals.Implementation;
-using rjw.Modules.Interactions.Objects;
+//using rjw.Modules.Interactions.Internals.Implementation;
+//using rjw.Modules.Interactions.Objects;
 using rjw;
-using rjw.Modules.Interactions.Enums;
+//using rjw.Modules.Interactions.Enums;
+
 
 //Modefied code based of RJW-AI code at https://gitgud.io/Ed86/rjw-ia/-/tree/master/
 namespace RJW_Genes

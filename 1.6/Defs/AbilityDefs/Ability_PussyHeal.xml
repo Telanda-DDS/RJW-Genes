@@ -33,9 +33,9 @@
       <li Class="RJW_Genes.CompProperties_AbilityPussyHeal"> 
         <tendQualityRange>0.4~0.8</tendQualityRange> 
       </li>
+	  <!-- 1.6 - RJW Interaction changes.
 	  <li Class="RJW_Genes.CompProperties_SexInteractionRequirements"> 
 		<tags>
-			<!-- <li>Consensual</li> -->
 			<li>Rape</li>
 		</tags>
 		<dominantRequirement>
@@ -43,7 +43,8 @@
 				<li>Vagina</li>
 			</families>
 		</dominantRequirement> 
-	  </li> 
+	  </li>
+		-->
     </comps>
   </AbilityDef>
 </Defs>

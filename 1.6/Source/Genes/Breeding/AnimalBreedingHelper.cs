@@ -46,7 +46,10 @@ namespace RJW_Genes
                 map.mapPawns
                     .AllPawnsSpawned
                     .Where<Pawn>((Func<Pawn, bool>)(p => 
-                        p.IsNonMutantAnimal 
+                        //1.6 Fix
+                        //p.IsNonMutantAnimal 
+                        p.IsAnimal
+                        && !p.IsMutant
                         && p.Position.InHorDistOf(position, distance)
                         && xxx.is_healthy_enough(p))
                     );

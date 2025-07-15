@@ -95,9 +95,6 @@
     <Compile Include="Common\Defs\BoundedExtension.cs" />
     <Compile Include="Genes\Life_Force\Events\SuccubusVisit\IncidentWorker_SuccubusVisit.cs" />
     <Compile Include="Genes\Life_Force\Events\SuccubusVisit\LordJob_SuccubusVisit.cs" />
-    <Compile Include="Genes\Life_Force\Interactions\SuccubusTailjob\DomSuccubusTailCustomRequirementHandler.cs" />
-    <Compile Include="Genes\Life_Force\Interactions\SuccubusTailjob\GenesPartKindUsageRule.cs" />
-    <Compile Include="Genes\Life_Force\Interactions\SuccubusTailjob\SubSuccubusTailCustomRequirementHandler.cs" />
     <Compile Include="Genes\Patches\PatchLitteredBirth.cs" />
     <Compile Include="Common\Patches\PatchPregnancyHelper.cs" />
     <Compile Include="DefOfs\GeneDefOf.cs" />
@@ -202,8 +199,6 @@
     <Compile Include="Genes\Special\Patches\Patch_SexualTamer.cs" />
     <Compile Include="Genes\Special\Thoughts\ThoughtWorker_Aphrodisiac_Pheromones_Social.cs" />
     <Compile Include="DefOfs\LetterDefOf.cs" />
-    <Compile Include="Interactions\SuccubusTailjob\CompAbility_SexInteractionRequirements.cs" />
-    <Compile Include="Interactions\SuccubusTailjob\CompProperties_SexInteractionRequirements.cs" />
     <Compile Include="Genes\RJW_Gene.cs" />
     <Compile Include="Genes\Genitalia\GenitaliaUtility.cs" />
     <Compile Include="Genes\Special\Genes\Gene_Aphrodisiac_Pheromones.cs" />
@@ -211,7 +206,6 @@
     <Compile Include="Genes\Special\Patches\Patch_Youth_Fountain.cs" />
     <Compile Include="HarmonyInit.cs" />
     <Compile Include="DefOfs\HediffDefOf.cs" />
-    <Compile Include="Interactions\SuccubusTailjob\CustomSexInteraction_Helper.cs" />
     <Compile Include="DefOfs\JobDefOf.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RJW_Genes.cs" />
@@ -233,7 +227,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="Cumpilation">
-      <HintPath>..\..\..\Cumpilation\1.5\Assemblies\Cumpilation.dll</HintPath>
+      <HintPath>..\..\..\cumpilation\1.6\Assemblies\Cumpilation.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="LicentiaLabs">
@@ -241,7 +235,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="RJW">
-      <HintPath>..\..\..\rjw\1.5\Assemblies\RJW.dll</HintPath>
+      <HintPath>..\..\..\rjw\1.6\Assemblies\RJW.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="RJWSexperience">
@@ -264,7 +258,10 @@
       <Private>False</Private>
     </Reference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Genes\Life_Force\Interactions\SuccubusTailjob\" />
+    <Folder Include="Interactions\SuccubusTailjob\" />
+  </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>

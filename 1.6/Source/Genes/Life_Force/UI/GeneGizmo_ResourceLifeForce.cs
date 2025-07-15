@@ -11,6 +11,8 @@ namespace RJW_Genes
 	//Copied from GeneGizmo_ResourceHemogen, with small modifications 
 	public class GeneGizmo_ResourceLifeForce : GeneGizmo_Resource
     {
+        private static bool draggingBar;
+
         public GeneGizmo_ResourceLifeForce(Gene_Resource gene, List<IGeneResourceDrain> drainGenes, Color barColor, Color barhighlightColor) : base(gene, drainGenes, barColor, barhighlightColor)
         {
             
@@ -19,6 +21,19 @@ namespace RJW_Genes
         public override GizmoResult GizmoOnGUI(Vector2 topLeft, float maxWidth, GizmoRenderParms parms)
         {
             return base.GizmoOnGUI(topLeft, maxWidth, parms);
+        }
+
+		//Added for 1.6 Support.
+        protected override bool DraggingBar
+        {
+            get
+            {
+                return GeneGizmo_ResourceLifeForce.draggingBar;
+            }
+            set
+            {
+                GeneGizmo_ResourceLifeForce.draggingBar = value;
+            }
         }
 
         protected override string GetTooltip()

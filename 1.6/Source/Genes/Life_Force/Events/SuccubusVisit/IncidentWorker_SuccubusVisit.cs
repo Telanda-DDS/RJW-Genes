@@ -123,7 +123,8 @@ namespace RJW_Genes
 
         private bool TryFindFormerFaction(out Faction formerFaction)
         {
-            return Find.FactionManager.TryGetRandomNonColonyHumanlikeFaction(out formerFaction, false, true, TechLevel.Undefined, false);
+            //1.6 Fix, Faction now has a min/Max techlevel instead of a set value, setting both to undefined.
+            return Find.FactionManager.TryGetRandomNonColonyHumanlikeFaction(out formerFaction, false, true, TechLevel.Undefined, TechLevel.Undefined, false);
         }
 
         protected virtual LordJob_SuccubusVisit CreateLordJob(IncidentParms parms, Pawn succubus, Pawn target)

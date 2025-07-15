@@ -7,8 +7,8 @@ using Verse.Sound;
 using Verse;
 using RimWorld;
 using rjw;
-using rjw.Modules.Interactions.Helpers;
-using rjw.Modules.Interactions.Enums;
+//using rjw.Modules.Interactions.Helpers;
+//using rjw.Modules.Interactions.Enums;
 
 namespace RJW_Genes
 {
@@ -16,7 +16,9 @@ namespace RJW_Genes
     {
         public static void PussyHeal(SexProps props)
         {
-            if (InteractionHelper.GetWithExtension(props.dictionaryKey).DominantHasFamily(GenitalFamily.Vagina) || InteractionHelper.GetWithExtension(props.dictionaryKey).SubmissiveHasFamily(GenitalFamily.Vagina))
+            //1.6 Update
+            //if (InteractoinHelper.GetWithExtension(props.dictionaryKey).DominantHasFamily(GenitalFamily.Vagina) || InteractionHelper.GetWithExtension(props.dictionaryKey).SubmissiveHasFamily(GenitalFamily.Vagina))
+            if (props.sexType == xxx.rjwSextype.Vaginal)
             {
                 Pawn pawn = props.pawn;
                 Pawn partner = props.partner;

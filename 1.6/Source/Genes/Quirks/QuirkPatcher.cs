@@ -2,7 +2,7 @@ using Verse;
 using RimWorld;
 using rjw;
 using System.Collections.Generic;
-using rjw.Modules.Quirks;
+//using rjw.Modules.Quirks;
 using System;
 
 namespace RJW_Genes
@@ -19,46 +19,49 @@ namespace RJW_Genes
         /// </summary>
         public static void CountSatisfiedPostfix(ref int __result, SexProps props)
         {
-            if (props == null) return;
-            Pawn pawn = props.pawn;
-            Pawn partner = props.partner;
-            if (partner == null  || pawn == null) return;
-            if(!pawn.IsHuman()||!partner.IsHuman()) return;
-            
-            List<string> potentiallySatisfiedQuirks = new List<string>();
-            foreach (Gene gene in partner.genes.GenesListForReading)
-            {
-                if (partner.genes.HasActiveGene(gene.def))
-                {
-                    string satisfiable_quirk = gene.def?.GetModExtension<QirkExtension>()?.Satisfiedquirk;
-                    if (!string.IsNullOrEmpty(satisfiable_quirk))
-                    {
-                        potentiallySatisfiedQuirks.Add(satisfiable_quirk);
-                    }
-                }
-            }
+            /*
+                        if (props == null) return;
+                        Pawn pawn = props.pawn;
+                        Pawn partner = props.partner;
+                        if (partner == null  || pawn == null) return;
+                        if(!pawn.IsHuman()||!partner.IsHuman()) return;
 
-            int QuirksSatisfiedByGenes = -1;
-
-            foreach (Quirk quirk in Quirk.All)
-            {
-                if (pawn.Has(quirk))
-                {
-                    foreach (string satisfiableQuirk in potentiallySatisfiedQuirks)
-                    {
-                        if (!string.IsNullOrEmpty(satisfiableQuirk) && quirk.LocaliztionKey == satisfiableQuirk)
+                        List<string> potentiallySatisfiedQuirks = new List<string>();
+                        foreach (Gene gene in partner.genes.GenesListForReading)
                         {
-                            QuirksSatisfiedByGenes++;
-                            Quirk.AddThought(pawn);
+                            if (partner.genes.HasActiveGene(gene.def))
+                            {
+                                string satisfiable_quirk = gene.def?.GetModExtension<QirkExtension>()?.Satisfiedquirk;
+                                if (!string.IsNullOrEmpty(satisfiable_quirk))
+                                {
+                                    potentiallySatisfiedQuirks.Add(satisfiable_quirk);
+                                }
+                            }
                         }
-                    }
-                }
-            }
 
-            if(QuirksSatisfiedByGenes > 0)
-                __result = __result + QuirksSatisfiedByGenes;
-            return;
+                        int QuirksSatisfiedByGenes = -1;
+
+                        foreach (Quirk quirk in Quirk.All)
+                        {
+                            if (pawn.Has(quirk))
+                            {
+                                foreach (string satisfiableQuirk in potentiallySatisfiedQuirks)
+                                {
+                                    if (!string.IsNullOrEmpty(satisfiableQuirk) && quirk.LocaliztionKey == satisfiableQuirk)
+                                    {
+                                        QuirksSatisfiedByGenes++;
+                                        Quirk.AddThought(pawn);
+                                    }
+                                }
+                            }
+                        }
+
+                        if(QuirksSatisfiedByGenes > 0)
+                            __result = __result + QuirksSatisfiedByGenes;
+                        return;
+*/
         }
 
     }
+
 }

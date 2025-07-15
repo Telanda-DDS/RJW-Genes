@@ -2,7 +2,7 @@
 using RimWorld;
 using Verse;
 using System.Collections.Generic;
-using rjw.Modules.Interactions.DefModExtensions;
+//using rjw.Modules.Interactions.DefModExtensions;
 
 namespace RJW_Genes
 {

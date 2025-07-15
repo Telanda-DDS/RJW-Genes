@@ -70,7 +70,9 @@ namespace RJW_Genes
                 if (pawn == null || this.pawn == null || pawn == this.pawn)
                     continue;
                 // Check for position-existance
-                if (pawn.Position == null || pos == null || pawn.Map == null)
+                // 1.6 fix
+                //if (pawn.Position == null || pos == null || pawn.Map == null)
+                if (pawn.Map == null || !pos.InBounds(pawn.Map) || !pawn.Spawned)
                     continue;
                 // Do nothing if pawn is carried 
                 if (pawn.CarriedBy != null)

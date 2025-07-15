@@ -7,8 +7,8 @@ using HarmonyLib;
 using RimWorld;
 using Verse;
 using rjw;
-using RJW_Genes;
-using rjw.Modules.Interactions.Enums;
+using rjw.Modules.Interactions;
+//using rjw.Modules.Interactions.Enums;
 
 namespace RJW_Genes
 {
@@ -44,8 +44,11 @@ namespace RJW_Genes
             
             List<Hediff> pawnparts = giver.GetGenitalsList();
             List<Hediff> partnerparts = receiver.GetGenitalsList();
-            var interaction = rjw.Modules.Interactions.Helpers.InteractionHelper.GetWithExtension(props.dictionaryKey);
-            
+            //var interaction = rjw.Modules.Interactions.Helpers.InteractionHelper.GetWithExtension(props.dictionaryKey);
+            var interaction = props.interaction;
+
+
+            // ILewdablePart.CouldBePenetrator()
 
             if (!(props.sexType == xxx.rjwSextype.Anal && receiver.genes.HasActiveGene(GeneDefOf.rjw_genes_fertile_anus)))
                 return;
@@ -55,14 +58,16 @@ namespace RJW_Genes
 
             //interaction stuff if for handling futa/see who penetrates who in interaction
             if (!props.isReceiver &&
-                interaction.DominantHasTag(GenitalTag.CanPenetrate) &&
-                interaction.SubmissiveHasFamily(GenitalFamily.Anus))
+                interaction.Extension.initiatorRequirement.genitalTags.Contains(GenitalTag.CanPenetrate) &&
+                Genital_Helper.has_anus(receiver))
+                //interaction.SubmissiveHasFamily(GenitalFamily.Anus))
+                //TODO: 1.6 Make sure i havn't got these FLIPPED.
             {
                 if (RJWSettings.DevMode) ModLog.Message(" impregnate - by initiator");
             }
             else if (props.isReceiver && props.isRevese &&
-                interaction.DominantHasFamily(GenitalFamily.Anus) &&
-                interaction.SubmissiveHasTag(GenitalTag.CanPenetrate))
+                Genital_Helper.has_anus(giver) &&
+                interaction.Extension.recipientRequirement.genitalTags.Contains(GenitalTag.CanPenetrate))
             {
                 if (RJWSettings.DevMode) ModLog.Message(" impregnate - by receiver (reverse)");
             }
@@ -72,7 +77,7 @@ namespace RJW_Genes
                 return;
             }
 
-            if (!rjw.Modules.Interactions.Helpers.PartHelper.FindParts(giver, GenitalTag.CanFertilize).Any())
+            if (!interaction.Extension.initiatorRequirement.genitalTags.Contains(GenitalTag.CanFertilize))
             {
                 if (RJWSettings.DevMode) ModLog.Message(xxx.get_pawnname(giver) + " has no parts to Fertilize with");
                 return;

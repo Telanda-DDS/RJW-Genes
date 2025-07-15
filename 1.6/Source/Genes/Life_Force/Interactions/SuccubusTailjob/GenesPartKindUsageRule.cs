@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using rjw;
-using rjw.Modules.Interactions.Contexts;
-using rjw.Modules.Interactions.Enums;
-using rjw.Modules.Interactions.Rules.PartKindUsageRules;
+//using rjw.Modules.Interactions.Contexts;
+//using rjw.Modules.Interactions.Enums;
+//using rjw.Modules.Interactions.Rules.PartKindUsageRules;
 using rjw.Modules.Shared;
 using Verse;
 

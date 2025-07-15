@@ -45,6 +45,10 @@ namespace RJW_Genes
 				this.Partner.jobs.curDriver.asleep = false;
 
 				//Tries to find CompProperties_SexInteractionRequirements and if it finds it it will try and generate sexprops based on the sexpropsrequirements.
+				// TODO
+				//1.6
+				//Disabling thes checks on pussy-heal job checks, need to rewrite for new SexInteraction system.
+/*
 				foreach (AbilityComp comp in this.job.ability.comps)
 				{
 					if (comp.props is CompProperties_SexInteractionRequirements)
@@ -53,6 +57,7 @@ namespace RJW_Genes
 						this.Sexprops = CustomSexInteraction_Helper.GenerateSexProps(this.pawn, this.Partner, sexpropsreq);
 					}
 				}
+*/
 				this.Start();
 				this.Sexprops.usedCondom = (CondomUtility.TryUseCondom(this.pawn) || CondomUtility.TryUseCondom(this.Partner));
 			};

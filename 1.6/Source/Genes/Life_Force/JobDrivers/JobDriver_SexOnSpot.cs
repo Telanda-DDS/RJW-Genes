@@ -7,11 +7,11 @@ using RimWorld;
 using Verse;
 using Verse.AI;
 using rjw;
-using rjw.Modules.Interactions.Enums;
-using rjw.Modules.Interactions.Helpers;
-using rjw.Modules.Interactions.Objects;
-using rjw.Modules.Interactions.Contexts;
-using rjw.Modules.Interactions.Implementation;
+//using rjw.Modules.Interactions.Enums;
+//using rjw.Modules.Interactions.Helpers;
+//using rjw.Modules.Interactions.Objects;
+//using rjw.Modules.Interactions.Contexts;
+//using rjw.Modules.Interactions.Implementation;
 
 namespace RJW_Genes
 {
