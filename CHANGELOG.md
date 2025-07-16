@@ -1,3 +1,16 @@
+# 2.5 (16-07-2025)
+
+**Fixes**
+
+- Added Rimworld 1.6 Branch and support - Initial Dev Test.
+
+
+**Known Issues**
+
+- Succubus Tail interactions disabled pending rewrite due to updates to RJW Interactions system.
+- Quirks disabled due to migration of RJW quirks to it's own sub-mod that has not yet been updated to 1.6
+
+
 # 2.4.2 (25-11-2024)
 
 **Fixes**:
