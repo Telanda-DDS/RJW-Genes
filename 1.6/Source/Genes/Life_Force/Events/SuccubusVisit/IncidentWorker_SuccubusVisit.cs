@@ -8,6 +8,8 @@ using Verse.AI;
 using Verse.AI.Group;
 using RimWorld;
 using rjw;
+using rjw.Modules.Attraction;
+
 namespace RJW_Genes
 {
     public class IncidentWorker_SuccubusDreamVisit : IncidentWorker
@@ -94,7 +96,7 @@ namespace RJW_Genes
                 if (RJWSettings.rape_enabled)
                 {
                     //follow rjw rules
-                    if (SexAppraiser.would_fuck(sexdemon, victim) > 0f)
+                    if (AttractionUtility.Evaluate(sexdemon, victim) > 0f)
                     {
                         sexdemon.pather.StopDead();
                         sexdemon.jobs.StopAll();

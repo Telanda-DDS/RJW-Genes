@@ -86,6 +86,9 @@ namespace RJW_Genes
 
         private void SpawnCum(Pawn pawn, IntVec3 cell, Map map)
         {
+            if (!ModsConfig.IsActive("vegapnk.cumpilation"))
+                return;
+
             Hediff hediff = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.rjw_genes_filled_living_cumbucket);
             if (hediff == null)
             {

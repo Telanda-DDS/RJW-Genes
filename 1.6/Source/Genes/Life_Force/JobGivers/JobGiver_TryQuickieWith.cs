@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using rjw;
-using RJWSexperience;
 using RimWorld;
+using rjw;
+using rjw.Modules.Attraction;
+using RJWSexperience;
+using UnityEngine;
 using Verse;
 using Verse.AI;
 using Verse.AI.Group;
-using UnityEngine;
 namespace RJW_Genes
 {
     public class JobGiver_TryQuickieWith : ThinkNode_JobGiver
@@ -62,7 +63,7 @@ namespace RJW_Genes
 		public static float TargetWillingness(Pawn pawn, Pawn target)
         {
 			string pawn_name = xxx.get_pawnname(pawn);
-			float willingness = SexAppraiser.would_fuck(target,pawn);
+			float willingness = AttractionUtility.Evaluate(target,pawn);
 			bool nymph = xxx.is_nympho(target);
 			bool loverelation = LovePartnerRelationUtility.LovePartnerRelationExists(pawn, target);
 			if (nymph || loverelation)

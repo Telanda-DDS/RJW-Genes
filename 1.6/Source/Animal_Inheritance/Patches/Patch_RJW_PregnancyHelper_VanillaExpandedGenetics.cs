@@ -46,10 +46,10 @@ public class Patch_RJW_PregnancyHelper_VanillaExpandedGenetics
 
             RJW_Genes.ModLog.Debug("Trying to add RJW Pregnancy Hediff - Checking for potential VGE Animal-Hybridization");
 
-            bool humanMotherAndSupportedAnimal = mother.IsHuman() && VGEHybridUtility.SupportedInitialAnimalRaces.Contains(father.kindDef);
-            bool humanMotherAndSupportedHybrid = mother.IsHuman() && VGEHybridUtility.SupportedHybridRaces.Contains(father.kindDef);
-            bool humanFatherAndSupportedAnimal = father.IsHuman() && VGEHybridUtility.SupportedInitialAnimalRaces.Contains(mother.kindDef);
-            bool humanFatherAndSupportedHybrid = father.IsHuman() && VGEHybridUtility.SupportedHybridRaces.Contains(mother.kindDef);
+            bool humanMotherAndSupportedAnimal = xxx.is_human(mother) && VGEHybridUtility.SupportedInitialAnimalRaces.Contains(father.kindDef);
+            bool humanMotherAndSupportedHybrid = xxx.is_human(mother) && VGEHybridUtility.SupportedHybridRaces.Contains(father.kindDef);
+            bool humanFatherAndSupportedAnimal = xxx.is_human(father) && VGEHybridUtility.SupportedInitialAnimalRaces.Contains(mother.kindDef);
+            bool humanFatherAndSupportedHybrid = xxx.is_human(father) && VGEHybridUtility.SupportedHybridRaces.Contains(mother.kindDef);
 
             // Exit if there are no supported parents / nothing to do for my logic
             if (!(humanMotherAndSupportedAnimal || humanMotherAndSupportedHybrid || humanFatherAndSupportedAnimal || humanFatherAndSupportedHybrid))

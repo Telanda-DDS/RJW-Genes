@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 using static System.Net.Mime.MediaTypeNames;
+using Cumpilation;
 
 namespace RJW_Genes
 {
@@ -57,6 +58,10 @@ namespace RJW_Genes
 
         public static void StackUpLivingCumbucket(Pawn pawn, float cumamount, SexFluidDef fluid, Pawn source)
         {
+            if (!ModsConfig.IsActive("vegapnk.cumpilation"))
+                return;
+
+
             float bodysize = pawn.BodySize;
             float result_severity_increase = cumamount / (fluid_amount_required_for_hediff_severity_ * bodysize);
 

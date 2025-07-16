@@ -35,8 +35,10 @@ namespace RJW_Genes
         {
             base.PostRemove();
             // Re-Add the old breasts
-            if (oldSize != null)
+            if (oldSize != -1f)
                 breastsToShrink.Severity = oldSize;
+            else
+                breastsToShrink.Severity = 0f;
         }
 
         internal void RemoveButStoreBreasts()

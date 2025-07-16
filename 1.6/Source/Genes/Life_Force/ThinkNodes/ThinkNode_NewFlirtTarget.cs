@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using rjw;
+using rjw.Modules.Attraction;
 using Verse;
 using Verse.AI;
-using rjw;
 namespace RJW_Genes
 {
     public class ThinkNode_NewFlirtTarget : ThinkNode
@@ -25,7 +26,7 @@ namespace RJW_Genes
         {
             foreach (Pawn pawn2 in map.mapPawns.FreeAdultColonistsSpawned)
             {
-                if (pawn != null && pawn2 != null && pawn != pawn2 && !pawn2.jobs.curDriver.asleep && SexAppraiser.would_fuck(pawn, pawn2) > 0.1f)
+                if (pawn != null && pawn2 != null && pawn != pawn2 && !pawn2.jobs.curDriver.asleep && AttractionUtility.Evaluate(pawn, pawn2) > 0.1f)
                 {
                     yield return pawn2;
                 }

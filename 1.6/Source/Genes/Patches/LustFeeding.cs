@@ -127,7 +127,7 @@ namespace RJWLoveFeeding
                             }
 
                         }                       
-                        SanguophageUtility.DoBite(pawn, bloodBag, 0.2f, 0.1f, 0.2f, 1f, IntRange.one, ThoughtDefOf.FedOn, ThoughtDefOf.FedOn_Social);
+                        SanguophageUtility.DoBite(pawn, bloodBag, 0.2f, 0.1f, 0.2f, 1f, IntRange.One, ThoughtDefOf.FedOn, ThoughtDefOf.FedOn_Social);
                         ModLog.Message($"{xxx.get_pawnname(pawn)} snacked on {xxx.get_pawnname(bloodBag)}");
                         return true;
                         
