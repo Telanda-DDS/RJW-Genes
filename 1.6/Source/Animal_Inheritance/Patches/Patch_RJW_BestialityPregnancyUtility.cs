@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using HarmonyLib;
 using RimWorld;
 using Verse;
 using rjw;
-using static RimWorld.PsychicRitualRoleDef;
 
 namespace RJW_BGS
 {
@@ -17,7 +14,7 @@ namespace RJW_BGS
         [HarmonyPostfix]
         public static void AddGenes(Pawn mother, Pawn dad, ref Hediff_BasePregnancy __instance)
         {
-            if (!RJW_BGSSettings.rjw_bgs_enabled)
+            if (!RJW_BGSSettings.rjw_bgs_enabled || (!mother.IsAnimal && !dad.IsAnimal))
             {
                 return;
             }
@@ -47,7 +44,7 @@ namespace RJW_BGS
                     //reason = "AbilityDisabledNoFertilinGene".Translate(this.parent.pawn);
                     baby.genes.xenotypeName = "rjw_genes_bestiality_hybrid_name".Translate();
 
-                    RJW_Genes.ModLog.Debug($"Birth of a Bestiality-Child - Added {humangenes.Count} human-genes and {beastgenes.Count} animal-genes.");
+                    RJW_Genes.ModLog.Debug($"Conception of a Bestiality-Child - Added {humangenes.Count} human-genes and {beastgenes.Count} animal-genes.");
                 }
             }
         }
