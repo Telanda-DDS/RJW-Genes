@@ -26,7 +26,7 @@ namespace RJW_Genes
             {
                 if (RJW_Genes_Settings.rjw_genes_detailed_debug)
                 {
-                    ModLog.Message("Found LimbicStimulator hediff during xxx.would_rape check");
+                    ModLog.Message("Found LimbicStimulator hediff during SexAppraiser.InMoodForRape check");
                     ModLog.Message("Pawn: " + rapist.NameShortColored + " (" + rapist.ThingID + ")");
                     ModLog.Message("__result (Before roll): " + __result);
                 }

@@ -77,10 +77,6 @@
     <Compile Include="Genes\Fluid\HediffComps\HediffComp_ProcessCumbucket.cs" />
     <Compile Include="Genes\Fluid\HediffComps\HediffsCompProperties_ProcessCumbucketMTB.cs" />
     <Compile Include="Genes\Fluid\JobDriver_ProcessingCumbucket.cs" />
-    <Compile Include="Genes\Fluid\Patches\Patch_Cumpilation_BlockCumflation.cs" />
-    <Compile Include="Genes\Fluid\Patches\Patch_Cumpilation_BlockStuffing.cs" />
-    <Compile Include="Genes\Fluid\Patches\Patch_Cumpilation_Inflatable.cs" />
-    <Compile Include="Genes\Fluid\Patches\Patch_LivingCumbucket_StackHediff.cs" />
     <Compile Include="Genes\Damage\Gene_Elasticity.cs" />
     <Compile Include="Genes\Diseases\Defs\GeneticDiseaseExtension.cs" />
     <Compile Include="Genes\Diseases\Defs\GeneticInfectorExtension.cs" />
@@ -168,7 +164,6 @@
     <Compile Include="Genes\Life_Force\MentalStates\LifeForceMentalState.cs" />
     <Compile Include="Genes\Life_Force\MentalStates\LifeForceMentalStateWorker.cs" />
     <Compile Include="Genes\Life_Force\Patches\Patch_SatisfyPersonal_LifeForceGain.cs" />
-    <Compile Include="Genes\Life_Force\Patches\Patch_SexTicks_ChangePsyfocus.cs" />
     <Compile Include="Genes\Life_Force\Patches\Patch_Vanilla_Inheritance_Fertilin.cs" />
     <Compile Include="Genes\Life_Force\ThinkNodes\ThinkNode_ConditionalCannotInteract.cs" />
     <Compile Include="Genes\Life_Force\ThinkNodes\ThinkNode_ConditionalCritcalLifeForce.cs" />
@@ -224,10 +219,6 @@
     <Reference Include="Assembly-CSharp, Version=1.4.8385.39127, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Cumpilation">
-      <HintPath>..\..\..\cumpilation\1.6\Assemblies\Cumpilation.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="LicentiaLabs">

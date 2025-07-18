@@ -1,4 +1,4 @@
-﻿using Cumpilation.Oscillation;
+﻿//using Cumpilation.Oscillation;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -25,9 +25,8 @@ namespace RJW_Genes
 			{
 				return null;
 			}
-			
 
-			if (ModsConfig.IsActive("rjw.sexperience") && gene_lifeforce.StoredCumAllowed && genes.HasActiveGene(GeneDefOf.rjw_genes_cum_eater))
+            if (ModsConfig.IsActive("rjw.sexperience") && gene_lifeforce.StoredCumAllowed && genes.HasActiveGene(GeneDefOf.rjw_genes_cum_eater))
             {
 				Thing gatheredCum = this.GetStoredCum(pawn);
 				if (gatheredCum == null)
@@ -66,11 +65,16 @@ namespace RJW_Genes
 			return 9.1f;
 		}
 
-		private Thing GetStoredCum(Pawn pawn)
-		{
-			if (!ModsConfig.IsActive("vegapnk.cumpilation"))
-				return null;
 
+		/// <summary>
+		/// Function is intentionaly left blank, and populated using the CumpilationPatcher external DLL. 
+		/// </summary>
+		/// <param name="pawn"></param>
+		/// <returns></returns>
+		public Thing GetStoredCum(Pawn pawn)
+		{
+			return null;
+			/*
 			Thing carriedThing = pawn.carryTracker.CarriedThing;
 			ThingDef cumThingDef = Cumpilation.DefOfs.Cumpilation_Cum;
 
@@ -88,6 +92,7 @@ namespace RJW_Genes
 				}
 			}
 			return GenClosest.ClosestThing_Global_Reachable(pawn.Position, pawn.Map, pawn.Map.listerThings.ThingsOfDef(cumThingDef), PathEndMode.OnCell, TraverseParms.For(pawn, Danger.Deadly, TraverseMode.ByPawn, false, false, false), 9999f, (Thing t) => pawn.CanReserve(t, 1, -1, null, false) && !t.IsForbidden(pawn), null);
+			*/
 		}
 	}
 }

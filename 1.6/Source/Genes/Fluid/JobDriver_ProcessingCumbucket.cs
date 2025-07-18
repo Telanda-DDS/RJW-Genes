@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using RimWorld;
+using rjw;
+using UnityEngine;
 using Verse;
 using Verse.AI;
-using UnityEngine;
-using System;
-using rjw;
-using RimWorld;
 
 namespace RJW_Genes
 {
@@ -12,7 +14,7 @@ namespace RJW_Genes
     /// Shamelessly stolen from LicentaLabs
     /// [Jaals Fork] https://gitgud.io/Jaaldabaoth/licentia-labs/-/blob/master/Source/LicentiaLabs/LicentiaLabs/JobDriver_VomitCum.cs
     /// </summary>
-    class JobDriver_ProcessingCumbucket : JobDriver_Vomit
+    public class JobDriver_ProcessingCumbucket : JobDriver_Vomit
     {
         public override bool CanBeginNowWhileLyingDown()
         {
@@ -68,6 +70,7 @@ namespace RJW_Genes
                         //TODO: Currently disabled due to Errors (#129), not a Fix but atleast no more errors
                         // if (ModsConfig.IsActive("LustLicentia.RJWLabs"))
                         //    FilthMaker.TryMakeFilth(this.job.targetA.Cell, base.Map, Licentia.ThingDefs.FilthCum);
+                        
                         SpawnCum(this.pawn, this.job.targetA.Cell, base.Map);
                     }
                 }
@@ -84,11 +87,18 @@ namespace RJW_Genes
             yield break;
         }
 
-        private void SpawnCum(Pawn pawn, IntVec3 cell, Map map)
+        /// <summary>
+        /// This Function is intentionaly left blank to avoid typeExceptions when cumpilation addon is not present, it is patched using the Patch_processingCumbucket Function in the optional DLL that is only loaded if Cumpilation is present.
+        /// </summary>
+        /// <param name="pawn"></param>
+        /// <param name="cell"></param>
+        /// <param name="map"></param>
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        public void SpawnCum(Pawn pawn, IntVec3 cell, Map map)
         {
             if (!ModsConfig.IsActive("vegapnk.cumpilation"))
                 return;
-
+            /*
             Hediff hediff = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.rjw_genes_filled_living_cumbucket);
             if (hediff == null)
             {
@@ -96,8 +106,10 @@ namespace RJW_Genes
                 return;
             }
 
+            
             var storage = hediff.TryGetComp<Cumpilation.Cumflation.HediffComp_SourceStorage>();
             var random_entry = storage.sources.RandomElementByWeight(p => p.amount);
+            
             ThingDef ToSpawn = random_entry.fluid.consumable == null ? Cumpilation.DefOfs.Cumpilation_Cum : random_entry.fluid.consumable;
 
             ThingDef cumDef = Cumpilation.DefOfs.Cumpilation_Cum;
@@ -112,7 +124,8 @@ namespace RJW_Genes
                 cum.stackCount = stacks;
                 cum.SpawnSetup(map, false);
                 hediff.Severity -= (stacks / 50);
-            } else
+            }
+            else
             // Case 2: Reserviour mode, put out a lot of cum at once but less often. 
             {
                 int stacks = Math.Max(1, (int)(hediff.Severity * 1.5));
@@ -128,6 +141,7 @@ namespace RJW_Genes
                     stacks -= curStacks;
                 }
             }
+          */
         }
 
         private int ticksLeft;
