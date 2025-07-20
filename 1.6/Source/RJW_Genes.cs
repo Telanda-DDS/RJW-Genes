@@ -12,7 +12,7 @@ namespace RJW_Genes
         {
             ModLog.Message("RJW-Genes loaded");
 
-            RJW_BGS.VGEHybridUtility.LogAllFoundVGEHybridDefinitions();
+            //RJW_BGS.VGEHybridUtility.LogAllFoundVGEHybridDefinitions();
         }
     }
 }
