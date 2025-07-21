@@ -16,6 +16,7 @@ namespace RJW_Genes
         
         public override void PostAdd()
         {
+            if (pawn.kindDef == null) return;   //Added to catch Rimworld creating statues of pawns.
             base.PostAdd();
             // Doing it like this will add the hediff with a severity of ~0.5, but it will decay.
             // Hence we check with the Ticks to update.

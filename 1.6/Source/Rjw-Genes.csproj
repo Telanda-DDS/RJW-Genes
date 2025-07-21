@@ -24,7 +24,6 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="..\About\**" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Animal_Inheritance\Defs\VGEHybridOffspringDefs.cs" />
