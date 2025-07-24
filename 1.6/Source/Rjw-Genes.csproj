@@ -173,6 +173,7 @@
     <Compile Include="Genes\Patches\LustFeeding.cs" />
     <Compile Include="Genes\Patches\MultiplePregnancies.cs" />
     <Compile Include="Genes\Patches\Patch_Asexual_CanRape.cs" />
+    <Compile Include="Genes\Patches\Patch_eltoro_streching.cs" />
     <Compile Include="Genes\Patches\Patch_sexualize_pawn.cs" />
     <Compile Include="Genes\Patch_AddNotifyOnGeneration.cs" />
     <Compile Include="Genes\Quirks\Defs\QirkExtension.cs" />
@@ -221,8 +222,8 @@
       <HintPath>..\..\..\..\..\..\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="LicentiaLabs">
-      <HintPath>..\..\..\licentia-labs\Assemblies\LicentiaLabs.dll</HintPath>
+    <Reference Include="LLStretcher">
+      <HintPath>..\..\..\rjw-elt-stretching\Assemblies\LLStretcher.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="RJW">
