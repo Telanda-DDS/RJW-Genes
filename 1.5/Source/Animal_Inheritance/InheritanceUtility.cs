@@ -48,9 +48,17 @@ namespace RJW_BGS
             {
                 foreach (BestialityGeneInheritanceDef gene in raceGeneDef.genes)
                 {
-                    if (gene.chance * RJW_BGSSettings.rjw_bgs_global_gene_chance  >= Rand.Range(0.01f,1f))
+                    if (gene.chance * RJW_BGSSettings.rjw_bgs_global_gene_chance >= Rand.Range(0.01f, 1f))
                     {
-                        genelist.Add(DefDatabase<GeneDef>.GetNamed(gene.defName));
+                        GeneDef tmpGene = DefDatabase<GeneDef>.GetNamed(gene.defName, false);
+                        if (tmpGene != null)
+                        {
+                            genelist.Add(tmpGene);
+                        }
+                        else
+                        {
+                            RJW_Genes.ModLog.Warning($"Unable to find gene {gene.defName}, skipping. May need to update {raceGeneDef.defName} definition.");
+                        }
                     }
                 }
             }
@@ -106,7 +114,7 @@ namespace RJW_BGS
                 List<GeneDef> beastgenes = InheritanceUtility.AnimalInheritedGenes(dad, mother);
                 InheritanceUtility.AddGenes(baby, beastgenes);
                 InheritanceUtility.AddGenes(baby, genes);
-                if(baby.genes.GetFirstEndogeneByCategory(EndogeneCategory.Melanin) == null)
+                if (baby.genes.GetFirstEndogeneByCategory(EndogeneCategory.Melanin) == null)
                 {
                     AddSkinColor(mother, dad, baby);
                 }

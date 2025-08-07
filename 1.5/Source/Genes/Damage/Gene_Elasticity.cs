@@ -1,4 +1,4 @@
-﻿using LicentiaLabs;
+﻿//using LicentiaLabs;
 using Verse;
 
 
@@ -19,35 +19,35 @@ namespace RJW_Genes
             base.PostAdd();
             // Doing it like this will add the hediff with a severity of ~0.5, but it will decay.
             // Hence we check with the Ticks to update.
-            this.pawn.health.AddHediff(Licentia.HediffDefs.Elasticised);
-            ResetSeverity();
+            //this.pawn.health.AddHediff(Licentia.HediffDefs.Elasticised);
+            //ResetSeverity();
         }
 
         public override void Tick()
         {
             base.Tick();
-            if (pawn.IsHashIntervalTick(RESET_INTERVAL))
-                ResetSeverity();
+            //if (pawn.IsHashIntervalTick(RESET_INTERVAL))
+            //   ResetSeverity();
         }
 
         public override void PostRemove()
         {
-            Hediff candidate = pawn.health.hediffSet.GetFirstHediffOfDef(Licentia.HediffDefs.Elasticised);
-            if (candidate != null)
-            {
-                pawn.health.RemoveHediff(candidate);
-            }
+            //Hediff candidate = pawn.health.hediffSet.GetFirstHediffOfDef(Licentia.HediffDefs.Elasticised);
+            //if (candidate != null)
+            //{
+            //    pawn.health.RemoveHediff(candidate);
+            //}
             base.PostRemove();
         }
 
 
         private void ResetSeverity(float severity = 0.7f)
         {
-            Hediff candidate = pawn.health.hediffSet.GetFirstHediffOfDef(Licentia.HediffDefs.Elasticised);
-            if (candidate != null)
-            {
-                candidate.Severity = severity;
-            }
+            //Hediff candidate = pawn.health.hediffSet.GetFirstHediffOfDef(Licentia.HediffDefs.Elasticised);
+            //if (candidate != null)
+            //{
+            //    candidate.Severity = severity;
+            //}
         }
         
     }
